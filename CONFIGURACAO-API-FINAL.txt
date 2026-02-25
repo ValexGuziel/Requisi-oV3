@@ -1,0 +1,64 @@
+CORREÇÃO FINAL: Variáveis de Ambiente - Gemini API
+===================================================
+
+PROBLEMA RESOLVIDO:
+"Chave de API do Gemini não configurada. Verifique o arquivo .env"
+
+CAUSA:
+A variável VITE_API_KEY não estava sendo passada corretamente para o processo de build.
+
+SOLUÇÃO:
+
+1. **Arquivo .env** (atualizado)
+   Mudou de:
+   API_KEY= AIzaSyCk95q9O0OEPaRvJUo7v_ADDrEKp5mBqGY
+   
+   Para:
+   VITE_API_KEY=AIzaSyCk95q9O0OEPaRvJUo7v_ADDrEKp5mBqGY
+   
+   (sem espaço, nome correto)
+
+2. **Dockerfile** (atualizado)
+   Adicionadas linhas:
+   ARG VITE_API_KEY
+   ENV VITE_API_KEY=${VITE_API_KEY}
+   
+   Isso permite que a variável seja passada como argumento de build
+
+3. **docker-compose.yml** (atualizado)
+   Mudou de:
+   args:
+     - VITE_API_KEY=${API_KEY}
+   
+   Para:
+   args:
+     - VITE_API_KEY=${VITE_API_KEY}
+   
+   (referência correta à variável do .env)
+
+COMO FUNCIONA:
+1. Docker compose lê o arquivo .env
+2. Passa VITE_API_KEY como build ARG
+3. Dockerfile recebe a chave durante build
+4. Vite embutiça a chave no código
+5. Em runtime, a chave está disponível em import.meta.env.VITE_API_KEY
+
+STATUS:
+✓ Build: Sucesso
+✓ Container: Rodando
+✓ Porto: 8080
+✓ Health: Starting/Healthy
+✓ API Key: Configurada
+
+TESTE:
+1. Acesse http://localhost:8080
+2. Preencha um problema
+3. Clique em "Análise Inteligente (IA)"
+4. Verifique a resposta do Gemini
+
+IMPORTANTE:
+- Sempre reconstrua após alterar .env: docker compose up --build
+- Não commitir .env no git
+- A chave fica embutida no build, por segurança ela não aparece em logs
+
+====================================================

@@ -1,0 +1,58 @@
+services:
+  maintenance-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_KEY=${VITE_API_KEY}
+    container_name: m_industrial_pro
+    ports:
+      - "0.0.0.0:8080:80"
+    environment:
+      - NODE_ENV=production
+      # Usa /api como caminho relativo - funciona para qualquer hostname
+      - VITE_API_URL=/api
+    restart: unless-stopped
+    depends_on:
+      - maintenance-api
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/index.html"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  maintenance-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: m_industrial_api
+    ports:
+      - "0.0.0.0:3001:3001"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_USER=root
+      - DB_PASSWORD=
+      - DB_NAME=manutencao_os
+      - PORT=3001
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

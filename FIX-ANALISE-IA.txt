@@ -1,0 +1,69 @@
+FIX: Erro ao processar análise inteligente (Gemini API)
+=====================================================
+
+PROBLEMA:
+Quando o usuário clicava em "Análise Inteligente (IA)", recebia o erro:
+"Erro ao processar análise inteligente"
+
+CAUSA:
+A chave da API do Gemini não estava sendo passada corretamente para o container.
+O código tentava acessar `process.env.API_KEY`, que não existe em aplicações Vite.
+
+SOLUÇÃO IMPLEMENTADA:
+
+1. **Atualizar docker-compose.yml**
+   - Adicionado: env_file: .env
+   - A chave API_KEY do arquivo .env agora é lida
+   - Passada como VITE_API_KEY para o build
+
+2. **Corrigir OrderForm.tsx**
+   - Mudou de: process.env.API_KEY
+   - Para: import.meta.env.VITE_API_KEY
+   - Adiciona validação se a chave está configurada
+   - Melhor tratamento de erros
+
+3. **Atualizar vite.config.ts**
+   - Define variável VITE_API_KEY para build
+   - Garante que a chave esteja disponível em tempo de execução
+
+4. **Adicionar vite-env.d.ts**
+   - Declara tipos TypeScript para import.meta.env
+   - Remove erros de compilação
+
+5. **Atualizar tsconfig.json**
+   - Adiciona "vite/client" aos types
+   - Permite usar import.meta.env
+
+COMO USAR:
+
+1. Certifique-se de que o arquivo .env existe:
+   C:\xampp\htdocs\ReqOrdServ\.env
+
+   Conteúdo:
+   API_KEY=AIzaSyCk95q9O0OEPaRvJUo7v_ADDrEKp5mBqGY
+
+2. Reconstrua o container:
+   docker compose down
+   docker compose up --build -d
+
+3. Acesse http://localhost:8080
+
+4. Teste a análise inteligente:
+   - Preencha a descrição do problema
+   - Clique em "Análise Inteligente (IA)"
+   - Aguarde a resposta do Gemini
+
+IMPORTANTE:
+- O arquivo .env NÃO deve ser commitado no git (.gitignore já previne isso)
+- A variável VITE_API_KEY é embutida no build (build-time, não runtime)
+- Por isso é necessário reconstruir após mudar .env
+
+TESTE:
+✓ Build: Sucesso
+✓ Container: Rodando
+✓ Porta: 8080
+✓ Saúde: Healthy
+
+====================================================
+Correção aplicada em: 2026-02-18
+====================================================

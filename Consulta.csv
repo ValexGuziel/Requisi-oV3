@@ -1,0 +1,426 @@
+Tag;Equipamento
+00001;Vestiário Masculino
+00002;VESTIÁRIO FEMININO
+00002;Sala PCP
+00003;Chapa da doca
+00004;Pátio
+00006;Gerador de espuma
+00006;Máquina de costura 3
+00008;Lâmpada led tubular
+00008;Insumo
+00008;Tomada
+00009;Tomada
+00012;ÁREA FRIA
+00013;Buffet térmico
+00014;Paleteira
+00014;Sala de manipulação
+00015;Clipadeira 1
+00016;Escada moinho
+00017;Paleteira inox
+00018;Setor de Expedição
+00019;corredor das estufas area fria
+00020;Carrinho
+00021;Seladora automática 4
+00022;Mesa
+00022;area externa
+00023;Rack
+00024;Prateleiras
+00025;Refeitório
+00025;SETOR DA EMBALAGEM
+00026;Faca
+00026;Ventilador
+00027;Refletor
+00028;Mesa
+00029;carrinho de glicerina manipulação
+00030;Mesa da balança
+00030;VENTILADOR 60CM
+00031;Higienização
+00032;Extintor
+00033;Paleteira
+00033;Paleteira
+00034;Carrinho
+00035;Cadeira
+00036;Paleteira azul
+00037;Extintor
+00038;Prateleiras
+00039;Lâmpada led tubular
+00040;Rack
+00041;Carrinho de glicerina
+00042;Ventilador
+00043;Suporte de proteção do painel
+00044;Paleteira
+00045;Painel de controle alimentador extrusora
+00045;Paleteira
+00046;Setor da Extrusão
+00047;Chave para abrir galão
+00048;Biodigestor
+00049;sala descongelamentos
+00050;Suporte de tirar bandejas
+00050;Stand Up Pounch
+00051;Ventilador
+00052;Relógio ponto
+00052;Câmera
+00053;Armadilha luminosa
+00054;Balança de chão 1000kg
+00055;Tanque de polipropileno 1-3
+00056;Tanque de polipropileno 4-6
+00057;Tanque de polipropileno 7-9
+00058;Mesa para inverter tripa
+00059;Motobomba periférica
+00060;Caixa de Inox
+00061;Tanque tingimento tripa
+00062;Paleteira
+00063;Câmara fria 1
+00064;Painel de comando
+00065;Compressor
+00066;Evaporador
+00067;Câmara fria 2
+00068;Painel de comando 1
+00069;Painel de comando 2
+00070;Compressor 1
+00071;Compressor 2
+00072;Evaporador 1 c/ 5 motores
+00073;Evaporador 2 c/ 5 motores
+00074;Balança de chão 1000kg
+00075;Balança 50kg
+00076;Balança 50kg
+00077;Mesa inox 1
+00078;Mesa inox 2
+00079;Mesa inox 3
+00080;Mesa inox 4
+00081;Bifetadeira
+00082;Ventilador 1
+00083;Ventilador 2
+00084;Ventilador 3
+00085;Motobomba periférica de água
+00086;CLIMATIZADOR ECO BRISA
+00086;Corredor de entrada
+00087;Hidrolavadora
+00088;Exaustor
+00089;Misturador de vapor
+00090;Ar condicionado
+00091;Gaveteiro inox 1
+00092;Gaveteiro inox 2
+00093;Armário inox 1
+00094;Armário inox 2
+00095;Armário inox 3
+00096;Armário inox 4
+00097;Armário inox 5
+00098;Datadora
+00099;Analisador de umidade
+00100;Analisador de aw 1
+00101;Analisador de aw 2
+00102;Extensão
+00102;ESTUFA 05
+00103;Motor elétrico 1
+00103;Suporte
+00104;Motor elétrico 2
+00105;Motor elétrico 3
+00106;Estufa 6
+00107;Motor elétrico 1
+00108;Motor elétrico 2
+00109;Motor elétrico 3
+00110;Estufa 7
+00111;Motor elétrico 1
+00112;Motor elétrico 2
+00113;Motor elétrico 3
+00114;Motor elétrico 4
+00115;Estufa 8
+00116;Motor elétrico 1
+00117;Motor elétrico 2
+00118;Motor elétrico 3
+00119;Motor elétrico 4
+00120;Quadro de comando 5-6
+00121;Quadro de comando 7
+00122;Quadro de comando 8
+00123;Armadilha luminosa
+00124;Bebedouro
+00125;Extrusora 1
+00126;Motor alimentador extrusora
+00127;Redutor alimentador extrusora
+00128;Extrusora 2
+00129;Motor alimentador extrusora
+00130;Redutor alimentador extrusora
+00131;Motor extrusora
+00132;Redutor extrusora
+00133;Masseira inox 1
+00134;Masseira inox 2
+00135;Motor
+00136;Redutor motor
+00137;Torre de resfriamento
+00138;Motor torre resfriamento
+00139;Ventilador 1
+00140;Ventilador 2
+00141;Ventilador 3
+00142;Ventilador 4
+00143;Mesa
+00144;Balança 15kg
+00147;Painel de Controle Masseira
+00148;Painel de controle água quente
+00149;Paleteira
+00150;Armadilha luminosa
+00151;Ventilador
+00152;Estufa 1
+00153;Motor elétrico 1
+00154;Motor elétrico 2
+00155;Motor elétrico 3
+00156;Motor elétrico 4
+00157;Motor elétrico 5
+00158;Estufa 2
+00159;Motor elétrico 1
+00160;Motor elétrico 2
+00161;Motor elétrico 3
+00162;Estufa 3
+00163;Motor elétrico 1
+00164;Motor elétrico 2
+00165;Motor elétrico 3
+00166;Estufa 4
+00167;Motor elétrico 1
+00168;Motor elétrico 2
+00169;Motor elétrico 3
+00170;Quadro de comando 1-2
+00171;Quadro de comando 3-4
+00172;Armadilha luminosa
+00173;Paleteira
+00174;SERRA FITA
+00175;SERRA FITA
+00176;SERRA FITA
+00177;Balança 50kg
+00178;Balança 50kg
+00180;CLIMATIZADOR ECO BRISA
+00181;Ventilador
+00182;Máquina de costura 2
+00183;CLIMATIZADOR ECO BRISA
+00184;Flowpack 1
+00185;Flowpack 2
+00186;Túnel de encolhimento
+00187;Seladora semi automática 1
+00188;Seladora semi automática 2
+00189;Detector de metais
+00190;Motor detector de metais
+00191;Impressora
+00192;Fechadora de caixa 1
+00193;Fechadora de caixa 2
+00194;Fechadora de caixa 3
+00195;SELADORA CETRO
+00196;Seladora registron
+00197;SELADORA CETRO
+00198;SELADORA EM L
+00199;Máquina de costura 1
+00200;Balança 50kg
+00201;Balança 15kg
+00202;Balança 15kg
+00203;Balança 15kg
+00204;Balança 15kg
+00205;Balança 15kg
+00206;Balança 15kg
+00207;Balança 15kg
+00208;Impressora etiqueta 1
+00209;Impressora etiqueta 2
+00210;Impressora etiqueta 3
+00211;Impressora etiqueta 4
+00212;Seladora pedal
+00213;Empilhadeira elétrica
+00215;Mesa inox 1
+00216;Mesa inox 2
+00217;Mesa inox 3
+00218;Bacia 1
+00219;Bacia 2
+00220;Ventilador 1
+00221;Exaustor
+00222;Bebedouro
+00223;Exaustor
+00224;Exaustor
+00225;Exaustor
+00226;Cortina de ar
+00227;Armadilha luminosa
+00228;TRANSPALETEIRA
+00229;CLIMATIZADOR ECO BRISA
+00230;Ventilador 1
+00231;Ventilador 2
+00232;Armadilha luminosa
+00233;Relógio ponto
+00234;Fulão
+00235;Motor fulão
+00236;Redutor fulão
+00237;Painel de Controle Fulão
+00238;Painel de Controle Fulão
+00239;Enxugadeira
+00240;Moedor de couro
+00241;Panela de pressão
+00242;Máquina de corte 1
+00243;Máquina de corte 2
+00244;Máquina de corte 3
+00245;Balança 50kg
+00246;Balança 15kg
+00247;Ventilador 1
+00248;Ventilador 2
+00249;Bebedouro
+00250;Moinho
+00251;Motor moinho
+00252;Soprador de ar
+00253;Painel elétrico moinho
+00254;Silo
+00255;Quadro de distribuição energia
+00256;Ventilador 1
+00257;Ventilador 2
+00258;Balança 50kg
+00259;Caldeira
+00260;Dosadora de Cloro
+00261;Válvula solenoide 1
+00262;Válvula solenoide 2
+00263;Válvula solenoide 3
+00264;Válvula solenoide 4
+00265;Válvula solenoide 5
+00266;Válvula solenoide 6
+00267;Válvula solenoide 7
+00268;Válvula solenoide 8
+00269;Válvula solenoide 9
+00270;Válvula solenoide 10
+00271;Exaustor caldeira
+00272;Motor exaustor
+00273;Válvula de segurança 8
+00274;Válvula de segurança 8.4
+00275;Motobomba
+00276;Motobomba caldeira
+00277;Injetor
+00278;Filtro de entrada de água BIG 20
+00279;Tanque caldeira
+00280;Compressor
+00281;Painel elétrico caldeira
+00282;Bomba dosadora sulfato de alumínio
+00283;Bomba dosadora soda
+00284;Bomba submersiva geral
+00285;Peneira rotativa
+00286;Motor peneira
+00287;Bomba elevação submersa
+00288;Soprador dos difusores
+00289;Painel elétrico
+00290;Painel de distribuição ETE
+00291;Painel de comando
+00292;Soprador de ar reator MBBR
+00293;Painel de comando principal ETE
+00294;Bomba dosadora polímero
+00295;Bomba dosadora anti-espumante
+00296;Motor agitador
+00297;Redutor agitador
+00298;Reator MBBR
+00299;Decantador fisico quimico
+00300;Caixa da água 10000L
+00301;Motobomba caixa da água
+00302;Filtro de areia 1
+00303;Filtro de areia 2
+00304;Filtro 1
+00305;Filtro 2
+00306;Filtro 3
+00307;Filtro 4
+00308;Armário  4 portas
+00309;Armário 12 portas
+00310;Armário 16 portas
+00311;Armário 16 portas
+00312;Armário 16 portas
+00313;Armário 16 portas
+00314;Armário 8 portas
+00315;Armário 8 portas
+00316;Armário 8 portas
+00317;Armário 12 portas
+00318;Armário 16 portas
+00319;Armário 16 portas
+00320;Ventilador 1
+00321;Ventilador 2
+00322;Ventilador 3
+00323;Ventilador 4
+00324;Ventilador
+00326;Bebedouro
+00327;Microondas
+00328;Fogão
+00329;Geladeira
+00330;Tanquinho
+00331;Ar condicionado
+00332;Ar condicionado
+00333;Ar condicionado
+00334;Frigobar
+00335;Bebedouro
+00336;TV
+00337;Ar condicionado
+00338;TV
+00339;Ar condicionado
+00340;Quadro de distribuição energia
+00341;Compressor de ar
+00342;Moldadora de bifinho
+00343;Esmeril
+00344;Serra circular
+00345;Furadeira de bancada
+00346;Máquina de solda
+00347;Parafusadeira furadeira
+00348;Lixadeira 115mm
+00349;Lixadeira 115mm
+00350;Lixadeira Lixadeira
+00351;Lixadeira Martelete
+00352;Furadeira manual
+00353;Atomizador/pulverizador
+00354;Roçadeira
+00355;Pulverizador manual
+00356;Soproaspirador
+00357;Motor 7.5 CV
+00358;Motor 7.5 CV
+00359;Motor 7.5 CV
+00360;Motor elétrico 4
+00361;Motor elétrico 5
+00362;Motor elétrico 6
+00363;Motor 3 CV
+00364;Hidrômetro
+00365;Banco de capacitores
+00366;Mesa inox 1
+00367;Mesa inox 2
+00368;Exaustor
+00374;Ventilador 2
+00375;Ventilador 3
+00376;Exaustor 1
+00377;Exaustor 2
+00378;Exaustor 1
+00379;Exaustor 2
+00380;Exaustor 3
+00381;Exaustor 4
+00382;Exaustor 5
+00383;Exaustor 6
+00395;Notebook Karen
+00406;Embalagem
+00407;Expedição
+00410;Paleteira inox
+00411;Injetora
+00412;Paleteira
+00413;Empilhadeira elétrica
+00414;Seladora automática em L
+00416;Serra circular discos
+00417;Clipadeira 2
+00418;Seladora de blister
+00419;Ar condicionado
+00420;Bebedouro
+00421;Portão eletrônico
+00422;Liquidificador industrial
+00423;Máquina de corte 4
+00424;Impressora Tesla
+00425;Amolador de faca
+00427;Seladora registron
+00428;Sala de Descongelamento
+09979;Cortina de ar
+09980;Estação de Tratamento
+09981;INTERFONE
+09982;Dosadora de Cloro
+09983;Motor elétrico 3
+09984;Máquina de costura 4
+09985;PORTA-COPOS
+09986;Tomada
+09987;HIDRAULICA
+09988;ÁREA FRIA
+09989;INTERFONE
+09990;Painel elétrico extrusora
+09991;SETOR SERRA FITA
+09993;MANGUEIRAS
+09994;MANGUEIRAS
+09995;LUMINOSO MASTIG
+09996;Lâmpada led tubular
+09997;Lâmpada Bulbo
+09998;Biodigestor
+99999;Filial Mastig

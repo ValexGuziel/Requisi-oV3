@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  maintenance-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: m_industrial_pro_dev
+    ports:
+      - "0.0.0.0:8080:80"
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+    volumes:
+      # Monta os arquivos TypeScript/React para hot reload
+      - ./src:/app/src
+      - ./components:/app/components
+      - ./services:/app/services
+      - ./index.tsx:/app/index.tsx
+      - ./App.tsx:/app/App.tsx
+      - ./constants.ts:/app/constants.ts
+      - ./types.ts:/app/types.ts
+      - ./vite.config.ts:/app/vite.config.ts
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/index.html"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,82 @@
+ANÁLISE DE IMPACTO - Backend Puppeteer + ChatGPT
+================================================
+
+MUDANÇAS IMPLEMENTADAS:
+✓ Backend Node.js com Express (porta 3001)
+✓ Serviço Puppeteer para automação ChatGPT
+✓ Frontend ajustado para chamar backend
+✓ docker-compose.yml atualizado com novo serviço
+
+IMPACTO NA IMAGEM DOCKER:
+
+1. TAMANHO DA IMAGEM
+   Antes: 26.3 MB (nginx + frontend)
+   Depois: ~450-500 MB (nginx + frontend + node + chromium + puppeteer)
+   
+   Razão: Chromium/Puppeteer é pesado (~300MB)
+   
+2. TEMPO DE BUILD
+   Antes: ~15-20 segundos
+   Depois: ~60-90 segundos (por causa do chromium)
+   
+3. TEMPO DE INICIALIZAÇÃO
+   Antes: ~5 segundos
+   Depois: ~10-15 segundos (chromium + browser context)
+
+4. USO DE MEMÓRIA
+   Antes: 50-100 MB
+   Depois: 200-400 MB (por causa do navegador headless)
+
+PROBLEMAS POTENCIAIS IDENTIFICADOS:
+
+1. ⚠️ DOCKER-COMPOSE.YML DESATUALIZADO
+   Problema: Ainda tem referência ao VITE_API_KEY=${API_KEY}
+   Impacto: Pode dar erro se .env não tiver essa variável
+   Solução: Atualizar para usar VITE_API_KEY correto
+
+2. ⚠️ FALTA DE REDE ENTRE CONTAINERS
+   Problema: Frontend tenta chamar localhost:3001
+   Impacto: Frontend e backend não conseguem se comunicar
+   Solução: Adicionar network e usar container name como DNS
+
+3. ⚠️ FALTA DE HEALTH CHECK NO BACKEND
+   Impacto: frontend pode tentar usar backend antes dele estar pronto
+   Solução: Adicionar health check e depends_on com condition
+
+4. ⚠️ AUSÊNCIA DE .dockerignore PARA BACKEND
+   Impacto: Pode incluir node_modules desnecessários
+   Solução: Criar backend/.dockerignore
+
+5. ⚠️ VARIÁVEL shm_size INSUFICIENTE
+   Problema: shm_size: '2gb' pode não ser suficiente para chromium
+   Impacto: Possível crash ao abrir navegador
+   Solução: Aumentar para '4gb' ou mais
+
+RECOMENDAÇÕES DE CORREÇÃO:
+
+1. IMEDIATO - Corrigir docker-compose.yml:
+   - Usar network explícita
+   - Adicionar depends_on com condition
+   - Frontend chamar http://ai-backend:3001 (container name)
+   - Aumentar shm_size para 4gb
+
+2. IMEDIATO - Criar backend/.dockerignore:
+   node_modules/
+   npm-debug.log
+   .git
+
+3. IMPORTANTE - Corrigir endereco no frontend:
+   Mudança: 'http://localhost:3001/api/analyze'
+   Para: 'http://ai-backend:3001/api/analyze'
+
+4. IMPORTANTE - Adicionar health check ao backend
+
+5. OTIMIZAÇÃO - Considerar usar imagem menor:
+   FROM node:22-alpine AS builder (para instalação)
+   FROM chromium-base (multi-stage para reduzir tamanho)
+
+CONCLUSÃO:
+As mudanças são VIÁVEIS, mas requerem ajustes na configuração Docker.
+O impacto de tamanho e performance é esperado com Puppeteer/Chromium.
+
+====================================================

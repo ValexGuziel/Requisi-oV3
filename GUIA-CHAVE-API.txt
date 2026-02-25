@@ -1,0 +1,56 @@
+COMO GERAR CHAVE API CORRETAMENTE - Google Gemini
+==================================================
+
+PROBLEMA:
+Modelo não encontrado (404). A chave gerada não tem acesso aos modelos Gemini.
+
+SOLUÇÃO:
+
+1. ACESSE GOOGLE AI STUDIO:
+   https://aistudio.google.com/app/apikeys
+
+2. CLIQUE EM "CREATE API KEY"
+
+3. CERTIFIQUE-SE DE:
+   ✓ Marcar "Create API key in new Google Cloud project"
+   ✓ Selecionar um projeto existente ou criar novo
+   ✓ Confirmar a criação
+
+4. COPIE A CHAVE (tipo: AIza...)
+
+5. ATUALIZE O ARQUIVO .env:
+   C:\xampp\htdocs\ReqOrdServ\.env
+   
+   Conteúdo:
+   VITE_API_KEY=SUA_CHAVE_AQUI
+
+6. RECONSTRUA O CONTAINER:
+   docker compose down
+   docker compose up --build -d
+
+7. TESTE NOVAMENTE EM:
+   http://localhost:8080
+
+MODELOS DISPONÍVEIS:
+- gemini-1.5-pro (recomendado)
+- gemini-1.5-flash
+- gemini-2.0-flash
+- gemini-pro (legado)
+
+IMPORTANTE:
+- A chave deve ter acesso ao Gemini API
+- Pode levar 1-2 minutos para a chave estar ativa
+- Certifique-se de ter créditos na conta
+
+SE CONTINUAR DANDO ERRO:
+1. Abra: https://aistudio.google.com/app/chatbot/c/new
+2. Teste se a chave funciona digitando algo
+3. Se funcionar, volte para o passo 5
+
+VERIFICAÇÃO RÁPIDA:
+No navegador, acesse:
+https://generativelanguage.googleapis.com/v1beta/models:listModels?key=SUA_CHAVE_AQUI
+
+Isso vai mostrar quais modelos sua chave pode usar.
+
+====================================================

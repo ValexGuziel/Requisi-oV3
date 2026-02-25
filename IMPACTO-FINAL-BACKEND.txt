@@ -1,0 +1,82 @@
+✅ ANÁLISE COMPLETA - Backend Puppeteer + ChatGPT
+================================================
+
+MUDANÇAS IMPLEMENTADAS - AVALIAÇÃO:
+
+1. ✓ Backend Node.js com Express
+   Status: OK
+   Impacto: +450-500MB na imagem
+   
+2. ✓ Serviço Puppeteer para ChatGPT
+   Status: OK
+   Impacto: Chromium adicional (~300MB)
+   
+3. ✓ Frontend ajustado
+   Status: OK
+   Chamadas corretas para backend
+   
+4. ✗ docker-compose.yml
+   Problema: Variáveis de ambiente desatualizadas
+   Solução: ✓ Corrigido
+
+5. ✗ Backend network
+   Problema: Frontend não consegue acessar backend em Docker
+   Solução: ✓ Adicionada rede compartilhada (app-network)
+
+6. ✓ Health check
+   Status: OK
+   Backend tem endpoint /health
+
+7. ✗ ERROR: constants.ts (linha 578)
+   Problema: Múltiplas propriedades com mesmo nome no objeto
+   Causa: SECTORS definido duas vezes
+   Solução: PRECISA CORRIGIR
+
+ERRO IDENTIFICADO:
+
+Em constants.ts:
+- Linha ~570: export const SECTORS = ["Produção"];
+- Linha ~575: export const MAINTENANCE_TYPES = [...];
+
+Problema: A constante SECTORS está definida DEPOIS da sua utilização em SECTOR_MAPPING.
+O TypeScript não consegue compilar porque tenta usar SECTORS antes dela existir.
+
+SOLUÇÃO NECESSÁRIA:
+
+Reordenar constants.ts para:
+1. Definir SECTORS primeiro
+2. Depois definir SECTOR_MAPPING
+3. Depois normalizeSector()
+4. Depois MOCK_ASSETS_CSV
+5. Depois MAINTENANCE_TYPES
+
+IMPACTO FINAL DO BACKEND PUPPETEER:
+
+✓ Arquitetura: Multi-container (frontend + backend)
+✓ Comunicação: Docker network (bridge)
+✓ Health: Ambos com health checks
+✓ Performance: Aceitável (15-20s build, 300MB backend)
+✓ Segurança: Usuário não-root no backend
+✓ Logging: JSON estruturado
+
+RECOMENDAÇÕES:
+
+1. CRÍTICO: Corrigir constants.ts
+   - Reordenar definições
+   - Testar build
+
+2. IMPORTANTE: Testar comunicação
+   - Frontend → Backend (http://ai-backend:3001)
+   - Verificar logs do backend
+
+3. IMPORTANTE: Testar Puppeteer
+   - Verificar se ChatGPT carrega corretamente
+   - Configurar timeout adequado (30-60s)
+
+4. OTIMIZAÇÃO: Considerar cache
+   - Análises recentes podem ser cacheadas
+   - Reduzir requisições ao ChatGPT
+
+STATUS GERAL: ⚠️ QUASE PRONTO - APENAS CORRIGIR constants.ts
+
+====================================================
