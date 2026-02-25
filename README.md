@@ -7,14 +7,13 @@
   <img src="https://img.shields.io/badge/Docker-Ready-blue?style=for-the-badge&logo=docker" alt="Docker">
 </p>
 
-MaintOS é uma aplicação de classe empresarial projetada para otimizar o fluxo de ordens de serviço (OS) em ambientes industriais. O sistema permite gerenciar完整的 manutenção de ativos, desde o cadastro até a conclusão, com suporte a análises inteligentes utilizando inteligência artificial.
-
+MaintOS é uma aplicação de classe empresarial projetada para otimizar o fluxo de ordens de serviço (OS) em ambientes industriais. O sistema permite gerenciar manutenção de ativos, desde o cadastro até a conclusão. 
 ## 📋 Funcionalidades
 
 - **Dashboard** - Visualização consolidada de métricas e indicadores de manutenção
 - **Criação de Ordens de Serviço** - Formulário completo para abertura de OS com seleção de ativos
 - **Lista de Ordens** - Visualização e gerenciamento de todas as ordens de serviço
-- **Análise Inteligente via IA** - Diagnósticos de causa raiz e sugestão de ferramentas baseadas no histórico de manutenção
+
 
 ## 🏗️ Tecnologias Utilizadas
 
@@ -24,7 +23,6 @@ MaintOS é uma aplicação de classe empresarial projetada para otimizar o fluxo
 | TypeScript | 5.7.0 | Tipagem estática |
 | Vite | 6.0.0 | Build tool e servidor de desenvolvimento |
 | Recharts | 2.15.0 | Biblioteca de gráficos |
-| Google Gemini | 1.41.0 | API de Inteligência Artificial |
 | Docker | - | Containerização |
 
 ## 🔧 Tipos de Manutenção Suportados
@@ -46,17 +44,6 @@ Antes de executar o projeto, certifique-se de ter instalado:
 ## 🚀 Como Executar
 
 ### 1. Configurar Variáveis de Ambiente
-
-Na raiz do projeto, crie um arquivo chamado `.env`:
-
-```
-env
-# Chave da API do Google Gemini
-GOOGLE_API_KEY=SUA_CHAVE_AQUI
-
-# Alternativamente (também funciona)
-GEMINI_API_KEY=SUA_CHAVE_AQUI
-```
 
 ### 2. Executar com Docker (Recomendado)
 
@@ -89,22 +76,6 @@ Para garantir a segurança da operação, siga estas diretrizes obrigatórias ao
 
 ### Restrição de IP
 No console do [Google Cloud](https://console.cloud.google.com/apis/credentials), edite sua chave de API e configure "Restrições de aplicativo" para permitir apenas o endereço IP fixo do seu servidor industrial ou a faixa de IPs da sua rede local.
-
-### Restrição de API
-Limite a chave para que ela possa acessar **exclusivamente** a "Generative Language API". Isso impede que a chave seja usada em outros serviços caso seja extraviada.
-
-### Variáveis de Ambiente
-Nunca escreva a chave diretamente no código. O sistema está configurado para ler das seguintes variáveis no servidor:
-- `GOOGLE_API_KEY`
-- `GEMINI_API_KEY`
-
-## 🤖 Uso da Inteligência Artificial
-
-O MaintOS utiliza o modelo `gemini-3-pro-preview` (ou versão mais recente disponível) para análise técnica avançada. No formulário de OS, o botão "Análise Inteligente" fornece:
-
-- Diagnósticos de causa raiz
-- Sugestão de ferramentas baseadas no histórico de manutenção do ativo
-- Recomendações de peças de reposição
 
 ## 📁 Estrutura do Projeto
 
